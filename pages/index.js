@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Head from "Next/head";
+import Seo from "../components/Seo";
 
 // 1. next는 react와 다르게 파일명이 url로 적용된다.
 // 2. set useState를 저런식으로 사용 가능
@@ -7,11 +9,10 @@ import { useState } from "react";
 // 5. html구조가 먼저 사용자에게 보여지고 그 후에 reactjs, javascript가 불러와져서 상호작용을 하게 된다
 // 6. 따라서 SEO검색엔진 최적화에도 좋은 것.
 export default function Home() {
-  const [counter, setCounter] = useState(0);
   return (
     <div>
-      <h1>Hello {counter}</h1>
-      <button onClick={() => setCounter((prev) => prev + 1)}>+</button>
+      <Seo title="HOME" />
+      <h1>about-us</h1>
     </div>
   );
 }
