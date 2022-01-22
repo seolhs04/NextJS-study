@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "Next/head";
 
 export default function Seo({ title }) {
   return (

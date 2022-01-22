@@ -2,11 +2,13 @@ import Link from "next/Link";
 // Next에서는 link를 적용할 때 아래와 같이 적용함
 import { useRouter } from "next/router";
 
+import * as S from "./style";
+
 export default function NavBar() {
   const router = useRouter(); /* react-router-dom의 useLocation과 같음 */
 
   return (
-    <nav>
+    <S.NavBar>
       <Link href="/">
         <a className={router.pathname === "/" ? "active" : ""}>home</a>
       </Link>
@@ -22,6 +24,6 @@ export default function NavBar() {
           color: tomato;
         }
       `}</style>
-    </nav>
+    </S.NavBar>
   );
 }
