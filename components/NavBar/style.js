@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import "@tail";
 
 export const NavBar = styled.nav`
   height: 3em;
