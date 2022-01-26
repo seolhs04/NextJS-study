@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Seo title="HOME" />
-      <h1>about-us</h1>
+      <h1>home</h1>
     </div>
   );
 }
