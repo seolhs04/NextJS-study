@@ -1,8 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Head from "Next/head";
 import Seo from "../components/Seo";
 
-import { useInput, useClick } from "../hooks";
+import {
+  useInput,
+  useClick,
+  useConfirm,
+  usePreventLeave,
+  useFadeIn,
+  useNetwork,
+} from "../hooks";
 
 // 1. next는 react와 다르게 파일명이 url로 적용된다.
 // 2. set useState를 저런식으로 사용 가능
@@ -12,17 +20,19 @@ import { useInput, useClick } from "../hooks";
 // 6. 따라서 SEO검색엔진 최적화에도 좋은 것.
 
 export default function Home() {
-  const name = useInput(
-    "hello",
-    (value) => value.length <= 10 && !value.includes("@")
+  const confirmFun = useConfirm("are you sure?", () =>
+    console.log("complete!")
   );
-  const title = useClick(() => console.log("asdf"));
-
+  const { enablePrevent, disablePrevent } = usePreventLeave();
+  const fadeInH1 = useFadeIn(2);
   return (
     <div>
       <Seo title="HOME" />
-      <h1 ref={title}>home</h1>
-      <input {...name} />
+      <h1>{useNetwork() ? "online" : "offline"}</h1>
+      <button onClick={confirmFun}>confirm</button>
+      <button onClick={enablePrevent}>protect</button>
+      <button onClick={disablePrevent}>unprotect</button>
+      <h1 {...fadeInH1}>fadeIN</h1>
     </div>
   );
 }
