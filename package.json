@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --verbose"
+    "storybook": "start-storybook -p 9009",
+    "test": "jest --verbose",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -16,9 +18,15 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@storybook/addon-actions": "^6.4.18",
+    "@storybook/addon-essentials": "^6.4.18",
+    "@storybook/addon-links": "^6.4.18",
+    "@storybook/cli": "^6.4.18",
+    "@storybook/react": "^6.4.18",
+    "babel-loader": "^8.2.3",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
-    "jest": "^27.4.7",
-    "tailwindcss": "^3.0.16"
+    "jest": "^27.4.7"
   }
 }
